@@ -18,7 +18,6 @@ export default class LineHeightCommand extends Command {
         const model = editor.model
         const doc = model.document
 
-        console.log(model.schema.getDefinitions())
 
         // const value = '0'
         const value = options.value
@@ -29,7 +28,6 @@ export default class LineHeightCommand extends Command {
 
             const removeLineHeight = /* isDefault( value ) ||  */currentLineHeight === value || typeof value === 'undefined'
 
-            console.log(value, currentLineHeight === value, typeof value === 'undefined')
 
             if ( removeLineHeight ) {
                 removeLineHeightFromSelection( blocks, writer )
@@ -47,14 +45,12 @@ export default class LineHeightCommand extends Command {
 
 function removeLineHeightFromSelection( blocks, writer ) {
     for (const block of blocks ) {
-        console.log('removing')
         writer.removeAttribute( LINE_HEIGHT, block )
     }
 }
 
 function setLineHeightOnSelection( blocks, writer, lineHeight ) {
     for (const block of blocks ) {
-        console.log('setting', block, lineHeight)
         writer.setAttribute( LINE_HEIGHT, lineHeight, block )
     }
 }
