@@ -42,6 +42,7 @@ ClassicEditor
 Currently supported translations:
 * English
 * German
+* Chinese
 
 ## License
 
